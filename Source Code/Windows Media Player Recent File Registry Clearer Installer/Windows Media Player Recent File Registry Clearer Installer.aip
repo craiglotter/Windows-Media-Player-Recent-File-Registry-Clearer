@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" version="1.9" modules="professional" RootPath=".">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="CTRLS" Value="3"/>
+    <ROW Property="ProductCode" Value="{97AF3949-0F50-4AAD-977A-C94A8BF5D118}"/>
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="ARPPRODUCTICON" Value="controlPanelIcon.exe"/>
+    <ROW Property="BannerBitmap" Value="installer_background.jpg"/>
+    <ROW Property="DialogBitmap" Value="installer_background_dialog.jpg"/>
+    <ROW Property="Manufacturer" Value="Craig Lotter"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{18CA36AB-1CE0-4E92-916A-29FAB7B83016}"/>
+    <ROW Property="ProductName" Value="Windows Media Player Recent File Registry Clearer"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="Inputs_DIR" Directory_Parent="TARGETDIR" DefaultDir="Inputs"/>
+    <ROW Directory="TARGETDIR" Directory_Parent="" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Application_Icon.ico" ComponentId="{7E4ECBFC-18D2-433B-BE5C-D38474005DD4}" Directory_="Inputs_DIR" Attributes="0" Condition="" KeyPath="Application_Icon.ico" FullKeyPath="TARGETDIR\Inputs"/>
+    <ROW Component="Application_Loader.exe" ComponentId="{1FE5A3E3-5121-44D7-B81E-70E9BB5E39DF}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Application_Loader.exe" FullKeyPath="TARGETDIR\Application_Loader.exe"/>
+    <ROW Component="Description.txt" ComponentId="{7E2A1391-6978-47A3-8482-0326D368784F}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Description.txt" FullKeyPath="TARGETDIR"/>
+    <ROW Component="WMP_Recent_File_Registry_Clearer.exe" ComponentId="{104D4E0C-E24C-4C21-9E4B-1B3B26C54D6E}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="WMP_Recent_File_Registry_Clearer.exe" FullKeyPath="TARGETDIR\WMP Recent File Registry Clearer.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Feature_Parent="" Title="MainFeature" Description="Description" Display="2" Level="1" Directory_="TARGETDIR" Attributes="0" Components="Application_Loader.exe Description.txt Application_Icon.ico WMP_Recent_File_Registry_Clearer.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Application_Loader.exe" Component_="Application_Loader.exe" FileName="Applic~1.exe|Application_Loader.exe" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\Application_Loader.exe" SelfReg="false"/>
+    <ROW File="Description.txt" Component_="Description.txt" FileName="Descri~1.txt|Description.txt" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\Description.txt" SelfReg="false"/>
+    <ROW File="Splash_Image.jpg" Component_="Application_Icon.ico" FileName="Splash~1.jpg|Splash_Image.jpg" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\Inputs\Splash_Image.jpg" SelfReg="false"/>
+    <ROW File="WMP_Recent_File_Registry_Clearer.exe" Component_="WMP_Recent_File_Registry_Clearer.exe" FileName="WMPRec~1.exe|WMP Recent File Registry Clearer.exe" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\WMP Recent File Registry Clearer.exe" SelfReg="false"/>
+    <ROW File="Application_Icon.ico" Component_="Application_Icon.ico" FileName="Applic~1.ico|Application_Icon.ico" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\Inputs\Application_Icon.ico" SelfReg="false"/>
+    <ROW File="Inputs.txt" Component_="Application_Icon.ico" FileName="Inputs.txt" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\Inputs\Inputs.txt" SelfReg="false"/>
+    <ROW File="Preview_Image.jpg" Component_="Description.txt" FileName="Previe~1.jpg|Preview_Image.jpg" Version="" Language="" Attributes="" SourcePath="..\Windows Media Player Recent File Registry Clearer\Required Files\Preview_Image.jpg" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Source="" Target="A higher version of [ProductName] is installed."/>
+    <ROW Action="AI_ViewReadme" Type="194" Source="viewer.exe" Target="[#Description.txt]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="AI_LaunchApp" Type="194" Source="viewer.exe" Target="[#Application_Loader.exe]"/>
+    <ROW Action="SET_TARGETDIR" Type="307" Source="TARGETDIR" Target="[ProgramFilesFolder]\[ProductName]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="UpgradeCode" VersionMin="" VersionMax="ProductVersion" Language="" Attributes="1025" Remove=""/>
+    <ROW UpgradeCode="UpgradeCode" VersionMin="ProductVersion" VersionMax="" Language="" Attributes="2" Remove=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="controlPanelIcon.exe" SourcePath="Images\Application_Icon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="installer_background.jpg" SourcePath="Images\installer_background.jpg"/>
+    <ROW Name="installer_background_dialog.jpg" SourcePath="Images\installer_background_dialog.jpg"/>
+    <ROW Name="viewer.exe" SourcePath="&lt;viewer.exe&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ATTRIBUTE name="Start" value="WelcomeDlg FolderDlg VerifyReadyDlg"/>
+    <ATTRIBUTE name="Progress" value="ProgressDlg"/>
+    <ATTRIBUTE name="End" value="ExitDialog"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMediaComponent">
+    <ATTRIBUTE name="InstallationType" value="1"/>
+    <ATTRIBUTE name="MediaSize" value="0"/>
+    <ATTRIBUTE name="Compress" value="1"/>
+    <ATTRIBUTE name="Package" value="10"/>
+    <ATTRIBUTE name="PackageName" value="Windows Media Player Recent File Registry Clearer Installer"/>
+    <ATTRIBUTE name="IconPath" value="Images\Application_Icon.ico?0"/>
+  </COMPONENT>
+</DOCUMENT>
